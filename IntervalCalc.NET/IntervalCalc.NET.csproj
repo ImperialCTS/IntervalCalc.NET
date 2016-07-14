@@ -42,6 +42,7 @@
     <Compile Include="ExtractExpressionParams.cs" />
     <Compile Include="Interval.cs" />
     <Compile Include="IntervalParams.cs" />
+    <Compile Include="Solvers\ModifiedGASolver.cs" />
     <Compile Include="Solvers\ISolver.cs" />
     <Compile Include="Solvers\GeneralTransformationSolver.cs" />
     <Compile Include="Solvers\MonteCarloSolver.cs" />

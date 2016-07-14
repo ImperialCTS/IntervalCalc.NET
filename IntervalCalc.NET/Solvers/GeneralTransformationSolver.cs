@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace IntervalCalc.Solvers
 {
     /// <summary>
-    /// Using Monte-Carlo method for Interval Calculus
+    /// Using General Transformation method for Interval Calculus
     /// </summary>
     public class GeneralTransformationSolver : ISolver
     {
         public Interval Calc(Expression<Func<double>> Exp)
         {
-            return Calc(Exp, 10000);
+            return Calc(Exp, 10);
         }
         public Interval Calc(Expression<Func<double>> Exp, int DiscretizationFactor)
         {

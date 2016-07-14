@@ -37,6 +37,7 @@ namespace IntervalCalcConsole
             Console.WriteLine($"Monte Carlo: {new MonteCarloSolver().Calc(exp)}");
             Console.WriteLine($"SA: {new SASolver().Calc(exp)}");
             Console.WriteLine($"General Transformation: {new GeneralTransformationSolver().Calc(exp)}");
+            Console.WriteLine($"Mod. General Transformation: {new ModifiedGASolver().Calc(exp)}");
         }
     }
 }
