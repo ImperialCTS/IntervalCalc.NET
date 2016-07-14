@@ -26,13 +26,35 @@ namespace IntervalCalcTests
         {
             var inv = new Interval(0, 1);
 
-            var result = Solver.Calc(() => inv.Any * (1 - inv.Any));
+            CheckWithin(Solver.Calc(() => inv.Any * (1 - inv.Any)), new Interval(0, 0.25));
+        }
 
-            Assert.IsTrue(result.A >= 0, "A < 0");
-            Assert.IsTrue(result.B <= 0.25, "B > 0.25");
+        [TestMethod]
+        public void TwoVariableMult()
+        {
+            var x = new Interval(0, 1);
+            var y = new Interval(3, 4);
 
-            Assert.IsTrue(result.A < epsilon, "A >> 0");
-            Assert.IsTrue(0.25 - result.B < epsilon, "B << 0.25");
+            CheckWithin(Solver.Calc(() => x.Any * y.Any), new Interval(0, 4));
+        }
+
+        [TestMethod]
+        public void TwoVariableDiv()
+        {
+            var x = new Interval(0, 1);
+            var y = new Interval(3, 4);
+
+            CheckWithin(Solver.Calc(() => x.Any / y.Any), new Interval(0, 1D / 3));
+        }
+
+        public void CheckWithin(Interval result, Interval CorrectResult)
+        {
+            var name = Solver.GetType().Name + ":";
+            Assert.IsTrue(result.A >= CorrectResult.A, name + "A < " + CorrectResult.A);
+            Assert.IsTrue(result.B <= CorrectResult.B, name + "B > " + CorrectResult.B);
+
+            Assert.IsTrue(result.A - CorrectResult.A < epsilon, name + "A >> " + CorrectResult.A);
+            Assert.IsTrue(CorrectResult.B - result.B < epsilon, name + "B << " + CorrectResult.B);
         }
     }
 }
