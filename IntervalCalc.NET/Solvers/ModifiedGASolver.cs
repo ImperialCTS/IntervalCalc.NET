@@ -11,11 +11,9 @@ namespace IntervalCalc.Solvers
     /// </summary>
     public class ModifiedGASolver : ISolver
     {
+        public int DiscretizationFactor { get; set; } = 10;
+
         public Interval Calc(Expression<Func<double>> Exp)
-        {
-            return Calc(Exp, 10);
-        }
-        public Interval Calc(Expression<Func<double>> Exp, int DiscretizationFactor)
         {
             var eep = new ExtractExpressionParams(Exp);
             var pars = eep.Params;

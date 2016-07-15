@@ -32,5 +32,10 @@ namespace IntervalCalc
         {
             return $"[{A.ToString("0.###")},{B.ToString("0.###")}]";
         }
+
+        public bool IsIn(double v)
+        {
+            return v >= A && v <= B;
+        }
     }
 }

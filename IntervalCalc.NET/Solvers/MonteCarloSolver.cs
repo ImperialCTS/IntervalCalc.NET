@@ -11,11 +11,9 @@ namespace IntervalCalc.Solvers
     /// </summary>
     public class MonteCarloSolver : ISolver
     {
+        public int NumIterations { get; set; } = 10000;
+
         public Interval Calc(Expression<Func<double>> Exp)
-        {
-            return Calc(Exp, 10000);
-        }
-        public Interval Calc(Expression<Func<double>> Exp, int NumIterations)
         {
             var eep = new ExtractExpressionParams(Exp);
             var pars = eep.Params;
