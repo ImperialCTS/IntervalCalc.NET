@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalCalc.NET", "IntervalCalc.NET\IntervalCalc.NET.csproj", "{5DC21923-7C30-4987-B8CB-09622E61391D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalCalcTests", "IntervalCalcTests\IntervalCalcTests.csproj", "{705CD8E9-8351-47DC-9ACA-C6F6E8E3A9A0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalCalcConsole", "IntervalCalcConsole\IntervalCalcConsole.csproj", "{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "IntervalCalcWebExamples", "IntervalCalcWebExamples\IntervalCalcWebExamples.xproj", "{243A9270-C45A-4BCA-A6A7-A6D788C3198D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{243A9270-C45A-4BCA-A6A7-A6D788C3198D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{243A9270-C45A-4BCA-A6A7-A6D788C3198D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{243A9270-C45A-4BCA-A6A7-A6D788C3198D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{243A9270-C45A-4BCA-A6A7-A6D788C3198D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
