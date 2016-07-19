@@ -1,4 +1,5 @@
 ﻿using IntervalCalc.Algorithms;
+using IntervalCalc.Expressions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +14,9 @@ namespace IntervalCalc.Solvers
     /// </summary>
     public class SASolver : ISolver
     {
-        public Interval Calc(Expression<Func<double>> Exp)
+        public Interval Calc(Func<IIntervalExpression> GetExp)
         {
-            var method = new ThreadLocal<ExtractExpressionParams>(() => new ExtractExpressionParams(Exp));
+            var method = new ThreadLocal<IIntervalExpression>(GetExp);
 
             var myval = method.Value;
 
@@ -27,7 +28,7 @@ namespace IntervalCalc.Solvers
             return new Interval(min, max);
         }
 
-        static double[] GetRandomNeighbour(Random r, ExtractExpressionParams eep, double[] Values)
+        static double[] GetRandomNeighbour(Random r, IIntervalExpression eep, double[] Values)
         {
             var newarr = new double[Values.Length];
             for (int i = 0; i < Values.Length; i++)

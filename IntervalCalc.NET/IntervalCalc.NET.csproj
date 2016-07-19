@@ -39,8 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Algorithms\SA.cs" />
-    <Compile Include="ExtractExpressionParams.cs" />
+    <Compile Include="Expressions\IIntervalExpression.cs" />
+    <Compile Include="Expressions\IntervalExpression.cs" />
     <Compile Include="Interval.cs" />
+    <Compile Include="IntervalArithmetic.cs" />
     <Compile Include="IntervalParams.cs" />
     <Compile Include="Solvers\ModifiedGASolver.cs" />
     <Compile Include="Solvers\ISolver.cs" />

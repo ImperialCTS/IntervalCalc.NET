@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntervalCalc.Expressions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -9,6 +10,6 @@ namespace IntervalCalc.Solvers
 {
     public interface ISolver
     {
-        Interval Calc(Expression<Func<double>> Exp);
+        Interval Calc(Func<IIntervalExpression> GetExp);
     }
 }

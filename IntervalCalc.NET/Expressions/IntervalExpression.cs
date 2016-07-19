@@ -5,18 +5,18 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace IntervalCalc
+namespace IntervalCalc.Expressions
 {
-    public class ExtractExpressionParams : ExpressionVisitor
+    public class IntervalExpression : ExpressionVisitor, IIntervalExpression
     {
-        public ExtractExpressionParams(Expression Exp)
+        public IntervalExpression(Expression Exp)
         {
             Params = new IntervalParams();
             this.Func = ((Expression<Func<double>>)Visit(Exp)).Compile();
         }
 
         public IntervalParams Params { get; private set; }
-        public Func<double> Func { get; set; }
+        Func<double> Func { get; set; }
 
         public double Calc(double[] Values)
         {

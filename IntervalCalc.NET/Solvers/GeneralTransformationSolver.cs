@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntervalCalc.Expressions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -13,9 +14,9 @@ namespace IntervalCalc.Solvers
     {
         public int DiscretizationFactor { get; set; } = 10;
 
-        public Interval Calc(Expression<Func<double>> Exp)
+        public Interval Calc(Func<IIntervalExpression> GetExp)
         {
-            var eep = new ExtractExpressionParams(Exp);
+            var eep = GetExp();
             var pars = eep.Params;
 
             var min = double.MaxValue;

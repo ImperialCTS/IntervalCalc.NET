@@ -1,4 +1,5 @@
 ﻿using IntervalCalc;
+using IntervalCalc.Expressions;
 using IntervalCalc.Solvers;
 using System;
 using System.Collections.Generic;
@@ -52,10 +53,11 @@ namespace IntervalCalcConsole
 
         private static void PrintResults(Expression<Func<double>> exp)
         {
-            Console.WriteLine($"Monte Carlo: {new MonteCarloSolver { NumIterations = 1000000 }.Calc(exp)}");
-            Console.WriteLine($"SA: {new SASolver().Calc(exp)}");
-            Console.WriteLine($"General Transformation: {new GeneralTransformationSolver { DiscretizationFactor = 1000 }.Calc(exp)}");
-            Console.WriteLine($"Mod. General Transformation: {new ModifiedGASolver().Calc(exp)}");
+            Func<IIntervalExpression> getexp = () => new IntervalExpression(exp);
+            Console.WriteLine($"Monte Carlo: {new MonteCarloSolver { NumIterations = 1000000 }.Calc(getexp)}");
+            Console.WriteLine($"SA: {new SASolver().Calc(getexp)}");
+            Console.WriteLine($"General Transformation: {new GeneralTransformationSolver { DiscretizationFactor = 1000 }.Calc(getexp)}");
+            Console.WriteLine($"Mod. General Transformation: {new ModifiedGASolver().Calc(getexp)}");
         }
     }
 }

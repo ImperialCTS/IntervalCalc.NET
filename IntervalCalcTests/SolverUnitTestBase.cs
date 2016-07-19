@@ -1,9 +1,11 @@
 ﻿using IntervalCalc;
+using IntervalCalc.Expressions;
 using IntervalCalc.Solvers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,12 +23,17 @@ namespace IntervalCalcTests
 
         ISolver Solver;
 
+        private Interval Calc(Expression<Func<double>> Exp)
+        {
+            return Solver.Calc(() => new IntervalExpression(Exp));
+        }
+
         [TestMethod]
         public void BasicTest()
         {
             var inv = new Interval(0, 1);
 
-            CheckWithin(Solver.Calc(() => inv.Any * (1 - inv.Any)), new Interval(0, 0.25));
+            CheckWithin(Calc(() => inv.Any * (1 - inv.Any)), new Interval(0, 0.25));
         }
 
         [TestMethod]
@@ -35,7 +42,7 @@ namespace IntervalCalcTests
             var x = new Interval(0, 1);
             var y = new Interval(3, 4);
 
-            CheckWithin(Solver.Calc(() => x.Any * y.Any), new Interval(0, 4));
+            CheckWithin(Calc(() => x.Any * y.Any), new Interval(0, 4));
         }
 
         [TestMethod]
@@ -44,7 +51,7 @@ namespace IntervalCalcTests
             var x = new Interval(0, 1);
             var y = new Interval(3, 4);
 
-            CheckWithin(Solver.Calc(() => x.Any / y.Any), new Interval(0, 1D / 3));
+            CheckWithin(Calc(() => x.Any / y.Any), new Interval(0, 1D / 3));
         }
 
         [TestMethod]
@@ -52,14 +59,14 @@ namespace IntervalCalcTests
         {
             var height = new Interval(1.795, 1.805);
             var weight = new Interval(79.5, 80.5);
-            CheckWithin(Solver.Calc(() => weight.Any / (height.Any * height.Any)), new Interval(24.4, 25.0), 0.1);
+            CheckWithin(Calc(() => weight.Any / (height.Any * height.Any)), new Interval(24.4, 25.0), 0.1);
         }
 
         [TestMethod]
         public void WikipediaExp2()
         {
             var x = new Interval(-1, 1);
-            CheckWithin(Solver.Calc(() => x.Any * x.Any + x.Any), new Interval(-0.25, 2));
+            CheckWithin(Calc(() => x.Any * x.Any + x.Any), new Interval(-0.25, 2));
         }
 
         public void CheckWithin(Interval result, Interval CorrectResult, double? overrideepsilon = null)
