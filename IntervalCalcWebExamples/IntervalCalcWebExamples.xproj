@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>243a9270-c45a-4bca-a6a7-a6d788c3198d</ProjectGuid>
+    <ProjectGuid>7f243d37-ab24-4933-9b7e-e9c0773f3f27</ProjectGuid>
     <RootNamespace>IntervalCalcWebExamples</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>

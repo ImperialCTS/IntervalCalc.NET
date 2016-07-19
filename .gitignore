@@ -243,9 +243,3 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
-/IntervalCalcWebExamples/Views/Shared/EditorTemplates/Interval.cshtml
-/IntervalCalcWebExamples/ViewModels/Examples/ParameterViewModel.cs
-/IntervalCalcWebExamples/ViewModels/Examples/ExampleViewModel.cs
-/IntervalCalcWebExamples/Controllers/ExamplesController.cs
-/IntervalCalcWebExamples/Binders/IntervalModelBinder.cs
-/IntervalCalcWebExamples/Views/Examples/EOQ.cshtml
