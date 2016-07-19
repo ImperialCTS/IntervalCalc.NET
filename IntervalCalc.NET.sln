@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalCalcTests", "Interv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntervalCalcConsole", "IntervalCalcConsole\IntervalCalcConsole.csproj", "{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "IntervalCalcWebExamples", "IntervalCalcWebExamples\IntervalCalcWebExamples.xproj", "{9A1D8B0B-4D7E-4DEC-9692-C92239CF81D5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41CAECEE-F141-46A3-B5B5-0074EF4AA45A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A1D8B0B-4D7E-4DEC-9692-C92239CF81D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A1D8B0B-4D7E-4DEC-9692-C92239CF81D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A1D8B0B-4D7E-4DEC-9692-C92239CF81D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A1D8B0B-4D7E-4DEC-9692-C92239CF81D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

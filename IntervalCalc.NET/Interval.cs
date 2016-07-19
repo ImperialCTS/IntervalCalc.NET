@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -21,7 +20,6 @@ namespace IntervalCalc
 
         public double Middle => (A + B) / 2;
 
-        [EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         public double Any
         {
             get
