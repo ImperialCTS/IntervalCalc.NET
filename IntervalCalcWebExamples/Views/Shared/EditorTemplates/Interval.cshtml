@@ -1,0 +1,15 @@
+﻿@model IntervalCalc.Interval
+
+<div class="row">
+    <div class="col-md-5">
+        @Html.TextBoxFor(m => m.A, htmlAttributes: new { @class = "form-control text-box", type = "number", step = 0.01 })
+    </div>
+    <div class="col-md-2 text-center">to</div>
+    <div class="col-md-5">
+        @Html.TextBoxFor(m => m.B, htmlAttributes: new { @class = "form-control text-box", type = "number", step = 0.01 })
+    </div>
+    <div class="col-md-12">
+        @Html.ValidationMessageFor(m => m.A, "", new { @class = "text-danger" })
+        @Html.ValidationMessageFor(m => m.B, "", new { @class = "text-danger" })
+    </div>
+</div>

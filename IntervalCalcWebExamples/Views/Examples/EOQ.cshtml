@@ -1,0 +1,36 @@
+﻿@model IntervalCalcWebExamples.ViewModels.Examples.ExampleViewModel
+
+@{ 
+    ViewBag.Title = "EOQ";
+    var Parameters = Model.Parameters;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    for (int i = 0; i < Parameters.Length; i++)
+    {
+        <div class="form-group">
+            <div class="control-label col-md-6">@Parameters[i].Title</div>
+            <div class="col-md-4">
+                @Html.HiddenFor(m => Parameters[i].Name)
+                @Html.EditorFor(m => Parameters[i].Value)
+            </div>
+            <div class="form-control-static col-md-2">
+                @Parameters[i].Unit
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        <div class="col-md-offset-6 col-md-6">
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </div>
+
+    <h2>Result</h2>
+
+    @: Q* = @Model.Output
+}

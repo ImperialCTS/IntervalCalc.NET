@@ -2,6 +2,14 @@
   "supports": {},
   "dependencies": {},
   "frameworks": {
-    ".NETPortable,Version=v4.5,Profile=Profile111": {}
-  }
+    ".NETPortable,Version=v4.5,Profile=Profile111": {},
+    "net45+win+wpa81": {
+      "wrappedProject": "IntervalCalc.NET.csproj",
+      "bin": {
+        "assembly": "obj/{configuration}/IntervalCalc.NET.dll",
+        "pdb": "obj/{configuration}/IntervalCalc.NET.pdb"
+      }
+    }
+  },
+  "version": "1.0.0-*"
 }
