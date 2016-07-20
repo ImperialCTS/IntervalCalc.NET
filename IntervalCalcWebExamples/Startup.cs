@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using IntervalCalc;
+using IntervalCalcWebExamples.Binders;
 
 namespace IntervalCalcWebExamples
 {
@@ -36,7 +39,12 @@ namespace IntervalCalcWebExamples
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
-            services.AddMvc();
+            services.AddMvc().AddMvcOptions(options =>
+            {
+                options.ModelMetadataDetailsProviders.Add(new SuppressChildValidationMetadataProvider(typeof(Interval)));
+                //TODO: Implement proper validation for Interval
+                options.ModelBinderProviders.Insert(0, new BasicModelBinderProvider<IntervalModelBinder, Interval>());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -243,3 +243,8 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Client Libraries 
+**/wwwroot/lib/jquery-ui/*
+**/wwwroot/lib/jquery-validation/*
+**/wwwroot/lib/jquery/*

@@ -1,0 +1,47 @@
+﻿@model IntervalCalcWebExamples.ViewModels.Examples.ExampleViewModel
+
+@{ 
+    ViewBag.Title = "EOQ";
+    var Parameters = Model.Parameters;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.AntiForgeryToken()
+
+        @for (int i = 0; i < Parameters.Length; i++)
+        {
+            @Html.EditorFor(m => Parameters[i])
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Update" class="btn btn-block btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<h2>Result</h2>
+
+<div class="form-horizontal">
+    <div class="form-group">
+        <div class="control-label col-md-2"><label>Optimal order quantity</label></div>
+        <div class="col-md-4">
+            <div class="interval-view-slider" style="margin-top: 12px;" data-slider-min="100" data-slider-max="3000"
+                    data-slider-A="@Model.Output.A.ToString("0.##")" data-slider-B="@Model.Output.B.ToString("0.##")"></div>
+        </div>
+        <div class="col-md-2 form-control-static">
+            @Model.Output.A.ToString("#,##0.##")
+        </div>
+        <div class="col-md-1 form-control-static text-center">to</div>
+        <div class="col-md-2 form-control-static">
+            @Model.Output.B.ToString("#,##0.##")
+        </div>
+        <div class="form-control-static col-md-1">
+            units
+        </div>
+    </div>
+</div>
