@@ -18,14 +18,14 @@
     <div class="control-label col-md-2"><label>@Model.Title</label></div>
     <div class="col-md-4">
         <div class="interval-slider" style="margin-top: 12px;" data-slider-min="@range.A" data-slider-max="@range.B" 
-             data-slider-step="0.01" data-slider-minfield="@(fieldname)_A" data-slider-maxfield="@(fieldname)_B"></div>
+             data-slider-step="@Model.Step" data-slider-minfield="@(fieldname)_A" data-slider-maxfield="@(fieldname)_B"></div>
     </div>
     <div class="col-md-2">
-        @Html.TextBoxFor(m => m.Value.A, htmlAttributes: new { @class = "form-control text-box", type = "number", step = 0.001 })
+        @Html.TextBoxFor(m => m.Value.A, htmlAttributes: new { @class = "form-control text-box", type = "number", step = Model.Step / 10 })
     </div>
     <div class="col-md-1 form-control-static text-center">to</div>
     <div class="col-md-2">
-        @Html.TextBoxFor(m => m.Value.B, htmlAttributes: new { @class = "form-control text-box", type = "number", step = 0.001 })
+        @Html.TextBoxFor(m => m.Value.B, htmlAttributes: new { @class = "form-control text-box", type = "number", step = Model.Step / 10 })
     </div>
     <div class="form-control-static col-md-1">
         @Model.Unit

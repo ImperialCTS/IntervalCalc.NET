@@ -9,15 +9,14 @@ namespace IntervalCalcWebExamples.Controllers
 {
     public class ExamplesController : Controller
     {
-        public IActionResult EOQ()
+        public IActionResult EOQ([FromForm]ParameterViewModel[] Parameters)
         {
-            return View(ExampleViewModel.GetEOQ(null));
+            return View("Example", ExampleViewModel.GetEOQ(Parameters));
         }
 
-        [HttpPost]
-        public IActionResult EOQ(ParameterViewModel[] Parameters)
+        public IActionResult BasicNPV([FromForm]ParameterViewModel[] Parameters)
         {
-            return View(ExampleViewModel.GetEOQ(Parameters));
+            return View("Example", ExampleViewModel.GetBasicNPV(Parameters));
         }
     }
 }

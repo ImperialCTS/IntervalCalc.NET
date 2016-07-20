@@ -8,13 +8,11 @@ using System.Threading.Tasks;
 
 namespace IntervalCalcWebExamples.ViewModels.Examples
 {
-    public class ParameterViewModel
+    public class ResultViewModel
     {
-        public string Name { get; set; }
         public string Title { get; set; }
         public string Unit { get; set; }
         public Interval Value { get; set; }
-        public Interval CustomRange { get; set; }
-        public double Step { get; set; } = 0.01;
+        public Interval Range { get; set; }
     }
 }

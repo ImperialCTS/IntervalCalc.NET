@@ -1,0 +1,30 @@
+﻿@model IntervalCalcWebExamples.ViewModels.Examples.ResultViewModel
+
+@{ 
+    var range = Model.Range;
+    if (range == null)
+    {
+        var width = Math.Max(1, Math.Abs(Model.Value.Middle));
+        var min = Model.Value.A - width;
+        var max = Model.Value.B + width;
+        range = new IntervalCalc.Interval(min, max);
+    }
+}
+
+<div class="form-group">
+    <div class="control-label col-md-2"><label>@Model.Title</label></div>
+    <div class="col-md-4">
+        <div class="interval-view-slider" style="margin-top: 12px;" data-slider-min="@range.A" data-slider-max="@range.B"
+             data-slider-A="@Model.Value.A.ToString("0.##")" data-slider-B="@Model.Value.B.ToString("0.##")"></div>
+    </div>
+    <div class="col-md-2 form-control-static">
+        @Model.Value.A.ToString("#,##0.##")
+    </div>
+    <div class="col-md-1 form-control-static text-center">to</div>
+    <div class="col-md-2 form-control-static">
+        @Model.Value.B.ToString("#,##0.##")
+    </div>
+    <div class="form-control-static col-md-1">
+        @Model.Unit
+    </div>
+</div>

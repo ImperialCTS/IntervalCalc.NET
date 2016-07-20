@@ -1,0 +1,34 @@
+﻿@model IntervalCalcWebExamples.ViewModels.Examples.ExampleViewModel
+
+@{ 
+    ViewBag.Title = Model.Title;
+    var Parameters = Model.Parameters;
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        @Html.AntiForgeryToken()
+
+        @for (int i = 0; i < Parameters.Length; i++)
+        {
+            @Html.EditorFor(m => Parameters[i])
+        }
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-6">
+                <input type="submit" value="Update" class="btn btn-block btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<h2>Result</h2>
+
+@foreach (var result in Model.Results)
+{
+    <div class="form-horizontal">
+        @Html.DisplayFor(m => result)
+    </div>
+}

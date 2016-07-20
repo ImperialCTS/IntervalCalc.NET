@@ -20,7 +20,8 @@ $(function () {
             max: $(this).data('slider-max'),
             step: $(this).data('slider-step'),
             values: [ $(minfield).val(), $(maxfield).val() ],
-            slide: getvalue
+            slide: getvalue,
+            change: getvalue
         });
         var setvalue = function() {
             if (isupdating) return;

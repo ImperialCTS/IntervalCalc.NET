@@ -9,8 +9,9 @@ namespace IntervalCalc
     {
         public Interval(double A, double B)
         {
+            if (A > B) throw new ArgumentException(nameof(B), "B should always be more or equal to A");
             this.A = A;
-            this.B = B;
+            this.B = B;            
         }
 
         public double A { get; private set; }
